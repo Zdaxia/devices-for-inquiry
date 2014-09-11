@@ -1,4 +1,4 @@
-const int analogInPin = A0;  // Analog input pin that the potentiometer is attached to
+const int analogInPin = A0;  
 const int buttonPin = A1; 
 
 const int mainLedPin =  13;
@@ -12,7 +12,7 @@ const int led6 =  10;
 const int led7 =  11;
 const int led8 =  12;
 
-int sensorValue = 0;        // value read from the pot  
+int sensorValue = 0;        
 int buttonState = 0; 
 
 
@@ -43,7 +43,8 @@ void loop() {
     sensorValue = analogRead(analogInPin);  
     digitalWrite(mainLedPin, HIGH);
     Serial.println(sensorValue);
-
+    
+    
     if(sensorValue>750){
       digitalWrite(led1, HIGH);
       digitalWrite(led2, HIGH);
@@ -121,7 +122,9 @@ void loop() {
   }
   else{
     Serial.println("OVER"); 
-    digitalWrite(mainLedPin, LOW);  
+    digitalWrite(mainLedPin, LOW); 
+    
+    //WE SHOULD SEND THE "sensorValue" DATA AFTER HERE. 
   };       
 
 
